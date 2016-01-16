@@ -23,4 +23,13 @@ public class Q141_Sqrt_x {
             return (int) left;
         }
     }
+	
+//	public double sqrt(int x){
+//		// start和end之间的距离为10^-6时退出
+//		while((end - start) > 1e - 6){
+//			double mid = (start + end) / 2;
+//			...
+//		}
+//		return ; 
+//	}
 }

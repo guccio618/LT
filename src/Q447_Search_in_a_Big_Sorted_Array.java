@@ -1,6 +1,7 @@
 
 public class Q447_Search_in_a_Big_Sorted_Array {
 	// by Jackie
+	// 倍增法
 	public int searchBigSortedArray(ArrayReader reader, int target) {
         // write your code here
         if(reader == null){

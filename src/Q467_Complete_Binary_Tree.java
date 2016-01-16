@@ -7,7 +7,7 @@ public class Q467_Complete_Binary_Tree {
 	 * 关于二叉树需要记录顺序的，可以用两个队列或堆栈，一个记录正常的顺序，
 	 * 包括null, 另一个记录不含null的，最后将结点逐一进行比较，如果期间
 	 * 有不同的，则返回false
-	 ******************************************************/
+	 ******************************************************/ 
 	// by Jackie
 	public boolean isComplete(TreeNode root) {
         // Write your code here

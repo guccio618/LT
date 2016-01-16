@@ -1,6 +1,7 @@
 
 public class Q159_Find_Minimum_in_Rotated_Sorted_Array {
 	// by Jackie
+	// 分类
 	public int findMin(int[] num) {
         // write your code here
         if(num == null || num.length == 0){
@@ -12,9 +13,9 @@ public class Q159_Find_Minimum_in_Rotated_Sorted_Array {
         
         while(left <= right){
             int mid = (left + right) / 2;
-            minValue = Math.min(minValue, num[left]);
-            minValue = Math.min(minValue, num[right]);
-            minValue = Math.min(minValue, num[mid]);
+            minValue = Math.min(minValue, num[left]);  // 注意 
+            minValue = Math.min(minValue, num[right]); // 注意
+            minValue = Math.min(minValue, num[mid]);   // 注意
             if(num[mid] > num[left] || num[mid] > num[right]){
                 left = mid + 1;
             }
