@@ -2,8 +2,26 @@ import java.util.Arrays;
 
 public class Q092_Backpack {
 	/*******************************************************/
-	// by Jackie using DP
+	// by ninechapter using DP
 	public int backPack(int m, int[] A) {
+		boolean[][] res = new boolean[A.length + 1][m + 1]; // 表示前i个物品，取出一些能否组成和为S体积的背包
+		res[0][0] = true;
+		for (int i = 1; i <= A.length; i++) {
+			for (int j = 0; j <= m; j++) {
+				res[i][j] = res[i-1][j] || (j - A[i-1] >= 0 && res[i-1][j - A[i-1]]);
+			}
+		}
+		for (int j = m; j >= 0; j--) {
+			if (res[A.length][j])
+				return j;
+		}
+		return 0;
+	}
+	
+
+	/*******************************************************/
+	// by Jackie using DP
+	public int backPack2(int m, int[] A) {
 		if(m <= 0 || A == null || A.length == 0){
             return 0;
         }
@@ -32,35 +50,7 @@ public class Q092_Backpack {
         return maxWeight;
 	}
 	
-	
-	/*******************************************************/
-	// by ninechapter using DP
-	public int backPack2(int m, int[] A) {
-        boolean f[][] = new boolean[A.length + 1][m + 1];
-        for (int i = 0; i <= A.length; i++) {
-            for (int j = 0; j <= m; j++) {
-                f[i][j] = false;
-            }
-        }
-        f[0][0] = true;
-        for (int i = 0; i < A.length; i++) {
-            for (int j = 0; j <= m; j++) {
-                f[i + 1][j] = f[i][j];
-                if (j >= A[i] && f[i][j - A[i]]) {
-                    f[i + 1][j] = true;
-                }
-            } // for j
-        } // for i
-        
-        for (int i = m; i >= 0; i--) {
-            if (f[A.length][i]) {
-                return i;
-            }
-        }
-        return 0;
-    }
-	
-	
+		
 	/*******************************************************/
 	// by Jackie using recursive, but time limit exceeded
 	private int maxWeight = Integer.MIN_VALUE;

@@ -11,3 +11,20 @@ class TreeNode {
 		this.left = this.right = null;
 	}
 }
+
+// Definition for ListNode.
+class ListNode {
+	int val;
+	ListNode next;
+	ListNode(int val) {
+		this.val = val;
+		this.next = null;
+	}
+}
+
+//Definition for singly-linked list with a random pointer.
+class RandomListNode {
+	int label;
+	RandomListNode next, random;
+	RandomListNode(int x) { this.label = x; }
+}

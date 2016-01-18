@@ -1,4 +1,4 @@
-public class Q125_ {
+public class Q125_Backpack_II {
 	// by other using DP
 	public int backPackII(int capacity, int[] size, int[] value) {
 		int[][] res = new int[size.length + 1][capacity + 1];
@@ -8,13 +8,10 @@ public class Q125_ {
 				if (j - size[i - 1] < 0)
 					res[i][j] = res[i - 1][j];
 				if (j - size[i - 1] >= 0) {
-					res[i][j] = Math.max(res[i - 1][j], res[i - 1][j
-							- size[i - 1]]
-							+ value[i - 1]);
+					res[i][j] = Math.max(res[i-1][j], res[i-1][j-size[i-1]] + value[i-1]);
 				}
 			}
 		}
-
 		return res[size.length][capacity];
 	}
 }
