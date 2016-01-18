@@ -1,6 +1,6 @@
 
 public class Q097_Maximum_Depth_of_Binary_Tree {
-	// by Jackie
+	// by Jackie using Divide & Conquer
 	public int maxDepth(TreeNode root) {
         // write your code here
         if(root == null){
