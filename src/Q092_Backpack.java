@@ -1,7 +1,11 @@
 import java.util.Arrays;
 
 public class Q092_Backpack {
-	/*******************************************************/
+	/*************************************************************
+	 * state: f[i][j]表示前i个物品是否可以装满体积为j的背包
+	 * funciton: f[i][j] = f[i-1][j] || f[i-1][j - itemsize[i]]
+	 * initial: f[0][0] = true
+	 *************************************************************/
 	// by ninechapter using DP
 	public int backPack(int m, int[] A) {
 		boolean[][] res = new boolean[A.length + 1][m + 1]; // 表示前i个物品，取出一些能否组成和为S体积的背包

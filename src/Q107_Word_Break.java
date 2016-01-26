@@ -1,6 +1,12 @@
 import java.util.Set;
 
 public class Q107_Word_Break {
+	/*************************************************************
+	 * state:     f[i]表示前i个字符是否可以分割
+	 * function:  f[i] = f[j] && str.substring(j+1,i) is at dict
+	 * initial:   f[0] = true
+	 * answer:    f[n]
+	 *************************************************************/
 	// by ninechapter
 	private int getMaxLength(Set<String> dict) {
 		int maxLength = 0;
@@ -26,7 +32,7 @@ public class Q107_Word_Break {
 					continue;
 				}
 				String word = s.substring(i - lastWordLength, i);
-				if (dict.contains(word)) {
+				if (dict.contains(word)) {    // O(L), L为单词长度
 					canSegment[i] = true;
 					break;
 				}

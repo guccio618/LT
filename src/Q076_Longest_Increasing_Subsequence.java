@@ -1,5 +1,13 @@
 
 public class Q076_Longest_Increasing_Subsequence {
+	/**********************************************
+	 * f[i]表示跳到i位置时，最长的LIS的长度
+	 * f[i] = f[j]+1 || j < i && nums[j] < nums[i]
+	 * 初始化: f[i] = 1, 所有点都有可能是起点;
+	 * answer: 
+	 * 错误： 不可以用f[i]表示前i个位置，能得到的lis的长度是什么
+	 **********************************************/
+	// by ninechapter
 	public int longestIncreasingSubsequence(int[] nums) {
         // write your code here
         if(nums == null || nums.length == 0){
@@ -9,6 +17,10 @@ public class Q076_Longest_Increasing_Subsequence {
         int max = -1;
         int[] res = new int[len];
         res[0] = 0;
+        
+        for(int i = 0; i < len; ++i){
+        	res[i] = 1;
+        }
         
         for(int i = 1; i < len; ++i){
             for(int j = i-1; j >= 0; --j){

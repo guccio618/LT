@@ -7,31 +7,36 @@ public class Q063_Search_in_Rotated_Sorted_Array_II {
             return false;
         }
         int left = 0, right = A.length-1;
-        while(left <= right){
+        while(left + 1 < right){
             int mid = (left + right) / 2;
             if(A[mid] == target){
                 return true;
             }
             else if(A[mid] > A[left] || A[mid] > A[right]){
                 if(target < A[mid] && target >= A[left]){   // 注意有等号，>=
-                    right = mid - 1;
+                    right = mid;
                 }
                 else{
-                    left = mid + 1;
+                    left = mid;
                 }
             }
             else if(A[mid] < A[right] || A[mid] < A[left]){
                 if(target > A[mid] && target <= A[right]){  // 注意有等号，<=
-                    left = mid + 1;
+                    left = mid;
                 }
                 else{
-                    right = mid - 1;
+                    right = mid;
                 }
             }
             else{
                 right--;
             }
         }
+        
+        if(A[left] == target || A[right] == target){
+            return true;
+        }
+        
         return false;
     }
 	
