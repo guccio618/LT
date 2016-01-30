@@ -7,7 +7,7 @@ public class Q141_Sqrt_x {
         }
         long left = 1, right = x;
         
-       while (left + 1 < right) {
+        while (left + 1 < right) {
             long mid = left + (right - left) / 2;
             if (mid * mid <= x) {
                 left = mid;
