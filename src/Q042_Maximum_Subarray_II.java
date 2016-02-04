@@ -37,7 +37,6 @@ public class Q042_Maximum_Subarray_II {
 	/**********************************************/
 	// by ninechapter, nice!
 	public int maxTwoSubArrays2(ArrayList<Integer> nums) {
-        // write your code
         int size = nums.size();
         int[] left = new int[size];
         int[] right = new int[size];

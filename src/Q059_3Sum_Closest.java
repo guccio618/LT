@@ -4,7 +4,6 @@ import java.util.Arrays;
 public class Q059_3Sum_Closest {
 	// by Jackie
 	public int threeSumClosest(int[] numbers ,int target) {
-        // write your code here
         Arrays.sort(numbers);
         int n = numbers.length;
         int diff = Integer.MAX_VALUE;
